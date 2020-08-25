@@ -1,0 +1,16 @@
+Project Design
+
+WEBSITE MUST BE REACTIVE/RESPONSIVE - Build it in mobile size
+
+Training website 
+- Log in/sign up 
+-- Keep new sign ups data/log in details
+---Keep record of their lessons (4 to 6) and completion status
+- Display potential lessons during sign up
+--Allow users to see their details and alter them
+- Lessons are run using Javascript slides/CSS slides
+-- Javascript test at the end to complete course
+--- Completion score depends on viewing lessons and passing the course test (50:50 split)
+---- Passing requires a total score of 80%
+- KEEP ALL PICS INSIDE THE APPLICATION!
+-- Create more than one header/footer for the JS links
