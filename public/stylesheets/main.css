@@ -1,3 +1,7 @@
+body {
+    font-family: Carrois Gothic;
+}
+
 .jumbotron {
     width: 100%;
     background: #2332ff;
@@ -33,4 +37,23 @@
 
 .navbar li {
     padding-right: 7rem;
+}
+
+.explan {
+    margin-top: 1.5rem;
+}
+
+.toned {
+    color: navy;
+}
+
+.explan p {
+    margin: 0.5rem;
+}
+
+.legal {
+    background: rgba(28, 30, 39, 0.876);
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.5rem;
 }
