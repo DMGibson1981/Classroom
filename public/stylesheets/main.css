@@ -57,3 +57,16 @@ body {
     margin-top: 1rem;
     font-size: 1.5rem;
 }
+
+.register-form {
+    margin-top: 5rem;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+input {
+    display: block;
+    border: solid 1px blue;
+    margin: 2px;
+    width: 40%;
+}
