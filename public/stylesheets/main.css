@@ -64,9 +64,33 @@ body {
     margin-right: 25%;
 }
 
-input {
+.input {
     display: block;
     border: solid 1px blue;
     margin: 2px;
     width: 40%;
+}
+
+.blackboard {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: darkblue;
+    height: 35rem;
+}
+
+.controls {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 3rem;
+}
+
+#backwards {
+    margin-right: 50%;
+}
+
+.btn-primary {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }

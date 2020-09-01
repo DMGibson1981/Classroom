@@ -53,6 +53,11 @@ app.get("/courses", function(req, res){
     res.render("courses");
 });
 
+app.get("/module", function(req, res){
+    res.render("module");
+});
+
+
 app.get("/login", function(req, res){
     res.render("login");
 });
