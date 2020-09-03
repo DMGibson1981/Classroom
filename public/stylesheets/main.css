@@ -86,11 +86,25 @@ body {
     margin-bottom: 3rem;
 }
 
-#backwards {
-    margin-right: 50%;
-}
-
 .btn-primary {
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+#backward {
+    display: inline;
+    margin-left: 70%;
+}
+
+#forward {
+    display: inline;
+    margin-left: 240%;
+}
+
+.van {
+    display: none;
 }

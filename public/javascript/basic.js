@@ -1,22 +1,33 @@
-const content = document.getElementsByClassName("lesson-content");
-const back = document.getElementById("backwards");
-const forward = document.getElementById("forwards");
-let count = 1;
+const slideList = ["assets/images/Slide1.jpg", "assets/images/Slide2.jpg", "assets/images/Slide3.jpg"];
+let slideOne = document.querySelector("#s1");
+let pageNo = 0;
+let currentPage = slideList[pageNo];
+let back = document.querySelector("#backward");
+let forward = document.querySelector("#forward");
+slideOne.setAttribute("src", currentPage);
 
-const ban = function(){
-    alert("Listening!");
+let resetLow = function(){
+    if(pageNo < 0){
+        pageNo = slideList.length-1;
+    }
 }
 
-const take = function(){
-    count-1;
+let resetHigh = function(){
+    if(pageNo > slideList.length-1){
+        pageNo = 0;
+    }
 }
 
-const give = function(){
-    count+1;
-}
+forward.addEventListener("click", function() {
+    pageNo++;
+    resetHigh();
+    currentPage = slideList[pageNo];
+    slideOne.setAttribute("src", currentPage);
+});
 
-
-
-back.addEventListener("click", take);
-
-forward.addEventListener("click", give);
+back.addEventListener("click", function() {
+    pageNo--;
+    resetLow();
+    currentPage = slideList[pageNo];
+    slideOne.setAttribute("src", currentPage);
+});

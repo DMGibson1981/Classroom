@@ -1,29 +1,42 @@
 <%- include("partials/header") %>
-<div class="fluid-container blackboard">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Lesson 1</h5>
-                    <div class="lesson-content">
-                            <p>Here is the first part of the lesson.</p>
-                            <p>Monocle ipsum dolor sit amet perfect Zürich Melbourne Baggu quality of life. Vibrant Muji Airbus A380 iconic, conversation espresso intricate Baggu extraordinary Comme des Garçons elegant boutique Beams first-class. Bureaux pintxos Ettinger soft power, Melbourne Muji Washlet Boeing 787 artisanal cosy Gaggenau. Uniforms espresso artisanal first-class hand-crafted Shinkansen. Impeccable ANA Washlet Swiss iconic Lufthansa premium liveable emerging remarkable Gaggenau.</p>
-                            <p>Charming hand-crafted hub, craftsmanship global Ginza Nordic emerging airport handsome premium boutique boulevard. Flat white uniforms sharp iconic tote bag, concierge Baggu exquisite lovely efficient. Tote bag wardrobe conversation Melbourne, lovely Lufthansa bureaux premium Porter discerning Washlet Winkreative quality of life. Elegant Baggu Nordic, Winkreative Gaggenau hub wardrobe concierge Airbus A380 tote bag Ginza. Melbourne extraordinary Ettinger Singapore uniforms Beams pintxos Porter Fast Lane Tsutaya efficient ANA. Concierge international Zürich sophisticated Asia-Pacific conversation uniforms hand-crafted bulletin charming Nordic impeccable punctual ryokan exquisite.</p>
-                            <p>Delightful liveable carefully curated, Gaggenau cutting-edge business class charming soft power alluring Shinkansen flat white punctual remarkable Ettinger. Zürich elegant soft power boutique. Soft power joy charming sophisticated cutting-edge, Muji quality of life concierge Ettinger iconic K-pop the highest quality Boeing 787 Washlet. Business class Marylebone Porter Singapore sharp, Gaggenau first-class. Carefully curated charming signature intricate, conversation premium ANA espresso Tsutaya Ginza Toto Gaggenau bureaux Nordic Boeing 787.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <br>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <button id="backwards" class="btn btn-primary"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
-            <button id="forwards" class="btn btn-primary"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+            <div class="slideshow">
+                <ul>
+                    <li class="slider">
+                        <div class="card">
+                            <img id="s1" class="card-img slide" src="">
+                        </div>
+                    </li>
+                    <li class="slider">
+                        <div class="card">
+                            <img id="s2" class="card-img slide van" src="assets/images/Slide2.jpg">
+                        </div>
+                    </li>
+                    <li class="slider">
+                        <div class="card">
+                            <img id="s3" class="card-img slide van" src="assets/images/Slide3.jpg">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-3">
+            <button id="backward" class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        </div>
+        <div class="col-3">
+            <button id="forward" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+
+
+
+
 
 <%- include("partials/footer") %>
