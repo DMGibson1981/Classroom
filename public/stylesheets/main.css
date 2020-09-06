@@ -51,10 +51,24 @@ body {
     margin: 0.5rem;
 }
 
+.titlea {
+    margin-left: 5%;
+}
+
+.titleb {
+    margin-left: 10%;
+}
+
+input {
+    display: block;
+    margin-bottom: 0.5rem;
+    width: 50%;
+}
+
 .legal {
     background: rgba(28, 30, 39, 0.876);
     color: white;
-    margin-top: 1rem;
+    margin-top: 19rem;
     font-size: 1.5rem;
 }
 
@@ -107,4 +121,17 @@ li {
 
 .van {
     display: none;
+}
+
+.profile {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.innine {
+    display: inline;
+}
+
+.key-name {
+    width: 100px;
 }
