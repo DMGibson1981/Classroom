@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+
+
+<div class="container commentry">
+    <div class="row">
+        <div class="col-12">
+            <form action="/forum" method="POST">
+                <input class="none" type="text" name="author" value="<%= currentUser.username %>">
+                <input id="textbox" type="text" name="opinion" placeholder="Type your comment here">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

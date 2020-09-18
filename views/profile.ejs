@@ -2,10 +2,29 @@
 <div class="container">
     <div class="row">
         <div class="col-12 profile">
-               
+               <p>Username: <%= currentUser.username %></p>
+               <p>Name: <%= currentUser.firstname %> <%= currentUser.surname %>  </p>
+               <p>Courses:</p>
         </div>
-        <div class="col-1200">
-
+        <div class="col-md-6 presentation">
+            <p>Course Name:</p>
+            <p>Completion:</p>
+            <a class="btn btn-primary" href="/module">Continue Course</a>
+        </div>
+        <div class="col-md-6 presentation">
+            <p>Course Name:</p>
+            <p>Completion:</p>
+            <a class="btn btn-primary" href="/module">Continue Course</a>
+        </div>
+        <div class="col-md-6 presentation">
+            <p>Course Name:</p>
+            <p>Completion:</p>
+            <a class="btn btn-primary" href="/module">Continue Course</a>
+        </div>
+        <div class="col-md-6 presentation">
+            <p>Course Name:</p>
+            <p>Completion:</p>
+            <a class="btn btn-primary" href="/module">Continue Course</a>
         </div>
     </div>
 </div>
@@ -18,5 +37,4 @@
 
 
 
-<a class="btn btn-primary" href="/module">Continue Course</a>
 <%- include("partials/footer") %>

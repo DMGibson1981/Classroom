@@ -8,6 +8,12 @@ var UserSchema = new mongoose.Schema({
     surname: String,
     email: String,
     password: String,
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Comment"
+        }
+    ]
 });
 
 UserSchema.plugin(passportLocalMongoose);

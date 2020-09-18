@@ -119,13 +119,31 @@ li {
     margin-left: 240%;
 }
 
+.sona {
+    padding: 1rem 0rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.drem {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .van {
     display: none;
 }
 
+#test {
+    margin-right: 50%;
+    margin-left: 50%;
+}
+
 .profile {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.5rem;
+    background: #f0edfd;
 }
 
 .innine {
@@ -134,4 +152,46 @@ li {
 
 .key-name {
     width: 100px;
+}
+
+.presentation {
+    border: solid 1px black;
+    margin-left: 2rem;
+}
+
+#s1 {
+    width: 60rem;
+    height: 30rem;
+}
+
+.commentry {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 3rem;
+}
+
+#textbox {
+    width: 70%;
+}
+
+.statement {
+    color: blue;
+    background: #c9d6df;
+    border: solid 1px black;
+    width: 100%;
+    margin-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 0rem;
+}
+
+.statement h4 {
+    width: 50%;
+}
+
+.statement p {
+    width: 90%;
+}
+
+.none {
+    display: none;
 }

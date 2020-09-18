@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const LocalStrategy = require("passport-local");
 const flash = require("connect-flash");
 const User = require("./models/user.js");
+const Comment = require("./models/comments.js");
 
 mongoose.connect("mongodb://localhost:27017/Classroom", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}).then(() => {
     console.log("Connected to DB!");
@@ -34,8 +35,6 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
-    res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success");
     next();
 });
 
@@ -45,7 +44,7 @@ app.get("/", function(req, res){
     res.render("index");
 });
 
-app.get("/profile", function(req, res){
+app.get("/profile", isLoggedIn, function(req, res){
     res.render("profile");
 });
 
@@ -54,15 +53,52 @@ app.get("/courses", function(req, res){
 });
 
 app.get("/forum", function(req, res){
-    res.render("forum");
+    Comments.findById(req.params.id, function(err, comments){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("forum", {comments: comments});
+        }
+    });
 });
+
+app.get("/comment", function(req, res){
+    res.render("comment");
+});
+
+// app.post("/forum", function(req, res){
+//     Const newComment = new Comment({author: req.body.author, opinion: req.body.opinion});
+//     Comment.register(newComment, function(err, comment){
+//         if(err){
+//             console.log(err);
+//             return res.render("/forum");
+//         } else{
+
+//         }
+//     })
+
+//     res.send("FUCK!");
+// });
 
 app.get("/module", function(req, res){
     res.render("module");
 });
 
+app.get("/module/test", function(req, res){
+    res.render("test");
+});
+
+
 app.get("/login", function(req, res){
     res.render("login");
+});
+
+app.post("/login", passport.authenticate("local", 
+    {
+        successRedirect: "/profile",
+        failureRedirect: "/login",
+    }), function(req, res){
+
 });
 
 app.get("/signup", function(req, res){
@@ -82,6 +118,17 @@ app.post("/signup", function(req, res){
     });
 });
 
+app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/");
+})
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next()
+    }
+    res.redirect("/login");
+}
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
     console.log("Classroom is open!");
