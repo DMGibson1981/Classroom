@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 const LocalStrategy = require("passport-local");
 const flash = require("connect-flash");
 const User = require("./models/user.js");
-const Comment = require("./models/comments.js");
+const Comments = require("./models/comments.js");
 
 mongoose.connect("mongodb://localhost:27017/Classroom", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}).then(() => {
     console.log("Connected to DB!");
@@ -62,24 +62,23 @@ app.get("/forum", function(req, res){
     });
 });
 
-app.get("/comment", function(req, res){
+app.get("/comment", isLoggedIn,  function(req, res){
     res.render("comment");
 });
 
-// app.post("/forum", function(req, res){
-//     Const newComment = new Comment({author: req.body.author, opinion: req.body.opinion});
-//     Comment.register(newComment, function(err, comment){
-//         if(err){
-//             console.log(err);
-//             return res.render("/forum");
-//         } else{
-
-//         }
-//     })
-
-//     res.send("FUCK!");
-// });
-
+app.post("/forum", function(req, res){
+    let newComment = new Comments({author: req.body.author, text: req.body.text});
+    Comments.create(newComment, function(err, newComment){
+        if(err){
+            console.log(err);
+            return res.render("/forum");
+        } else{
+            console.log(newComment);
+            res.redirect("/forum");
+        }
+    });
+});
+ 
 app.get("/module", function(req, res){
     res.render("module");
 });

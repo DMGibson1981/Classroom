@@ -1,11 +1,13 @@
 <%- include("partials/header") %>
-
+ 
 <div class="container">
     <div class="row">
-        <div class="col-12 statement">
-            <h4><strong> * </strong></h4>
-            <p> * </p>
-        </div>
+        <% users.comments.forEach(function(comment){ %>
+            <div class="col-12 statement">
+                <h4><strong><%= comments.author %></strong></h4>
+                <p><%= comments.text %></p>
+            </div>
+        <% }); %>
     </div>
     <a class="btn btn-primary" href="/comment">New Comment</a>
 </div>
