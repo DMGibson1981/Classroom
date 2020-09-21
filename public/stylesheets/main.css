@@ -174,12 +174,20 @@ li {
     width: 70%;
 }
 
+.addition {
+    margin-top: 1rem;
+}
+
+.alto {
+    margin-top: 1rem;
+}
+
 .statement {
     color: blue;
     background: #c9d6df;
     border: solid 1px black;
     width: 100%;
-    margin-top: 3rem;
+    margin-bottom: 0.2rem;
     padding-left: 1rem;
     padding-right: 0rem;
 }

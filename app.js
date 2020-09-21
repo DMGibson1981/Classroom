@@ -53,11 +53,12 @@ app.get("/courses", function(req, res){
 });
 
 app.get("/forum", function(req, res){
-    Comments.findById(req.params.id, function(err, comments){
+    Comments.find({}, function(err, comments){
         if(err){
             console.log(err);
         } else {
             res.render("forum", {comments: comments});
+            console.log(comments);
         }
     });
 });
