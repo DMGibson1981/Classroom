@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+ 
+<div class="container">
+    <div class="row">
+        <% courses.forEach(function(courses){ %>
+            <div class="col-12 statement">
+                <h4><%= courses.courseName %></h4>
+                <p><%= courses.description %></p>
+                <p><%= courses.module %></p>
+                <a class="btn btn-primary" href="/module/<%= courses._id %>">To <%= courses.courseName %></a>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

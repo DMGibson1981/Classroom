@@ -8,7 +8,10 @@ const LocalStrategy = require("passport-local");
 const flash = require("connect-flash");
 const User = require("./models/user.js");
 const Comments = require("./models/comments.js");
+const Course = require("./models/course.js");
+const seedDB = require("./seeds");
 
+//seedDB();
 mongoose.connect("mongodb://localhost:27017/Classroom", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}).then(() => {
     console.log("Connected to DB!");
 }).catch(err => {
@@ -66,7 +69,7 @@ app.get("/forum", function(req, res){
 app.get("/comment", isLoggedIn,  function(req, res){
     res.render("comment");
 });
-
+ 
 app.post("/forum", function(req, res){
     let newComment = new Comments({author: req.body.author, text: req.body.text});
     Comments.create(newComment, function(err, newComment){
@@ -84,8 +87,22 @@ app.get("/module", function(req, res){
     res.render("module");
 });
 
-app.get("/module/test", function(req, res){
+app.get("/module/:id", function(req, res){
+    res.render("module");
+});
+
+app.get("/module/:id/:test", function(req, res){
     res.render("test");
+});
+
+app.get("/experiment", function(req, res){
+    Course.find({}, function(err, courses){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("experiment", {courses: courses});
+        }
+    });
 });
 
 
